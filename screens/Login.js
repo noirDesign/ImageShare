@@ -16,13 +16,12 @@ const Login = ({navigation}) => {
                 navigation.replace("Home")
             }
         });
+        
 
         return unsubscribe;
-    }, [])
+    })
 
-    const signIn=()=>{
-
-    }
+    const signIn=()=>{};
 
     return (
         <KeyboardAvoidingView style={styles.container}>

@@ -1,4 +1,4 @@
-import *as firebase from "firebase";
+import * as firebase from "firebase";
 import "firebase/firestore";
 import "firebase/auth";
 
@@ -12,14 +12,14 @@ const firebaseConfig = {
 };
 
 let app;
-if (firebase.apps.legth ===0){
-  app= firebase.initializeApp(firebaseConfig)
+
+if (firebase.apps.legth == 0) {
+  app = firebase.initializeApp(firebaseConfig);
 }else{
-  app =firebase.app();
+  app = firebase.app();
 }
-const db =app.firestore();
-const auth =firebase.auth();
+
+const db = app.firestore();
+const auth = firebase.auth();
 export {db, auth};
 
-
-// const firebaseApp = firebase.initializeApp(firebaseConfig)

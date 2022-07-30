@@ -12,17 +12,16 @@ const Register = ({navigation}) => {
 
     // firebase
     const register =()=>{
-        auth
-            .createUserWithEmailAndPassword(email, password)
+        auth.createUserWithEmailAndPassword(email, password)
             .then ((authUser)=>{
                 authUser.user.update({
                     displayName: name,
                     photoURL:
-                    imageUrl ||
-                    "https://i.pinimg.com/474x/1d/c5/95/1dc5950b6293fac6c112887ff2c26039.jpg"
+                    imageUrl ||"https://i.pinimg.com/474x/1d/c5/95/1dc5950b6293fac6c112887ff2c26039.jpg",
                 })
             })
             .catch((error) => alert(error.message));
+            
 
     }
 
