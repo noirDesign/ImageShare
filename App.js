@@ -1,20 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from "react-native";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Login from "./screens/Login";
+import Register from "./screens/Register";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+const Stack = createNativeStackNavigator();
+
+const globalScreen = {
+    headerStyle: {backgroundColor: "#2c6bed"},
+    headerTitleStyle:{color: "white"},
+    headerTintColor: '#fff',
+    headerTitleStyle: {fontWeight: '400'},
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default function App() {
+    return (
+        <NavigationContainer>
+            <Stack.Navigator screenOptions={globalScreen}>
+                <Stack.Screen name="Iniciar sesion" component={Login} />
+                <Stack.Screen name="Registrarse" component={Register} />
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
+}
