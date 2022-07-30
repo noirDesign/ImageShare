@@ -4,10 +4,9 @@ import { View, Text, StyleSheet } from 'react-native';
 const Home = () => {
     return (
         <View>
-            <Text>es el home</Text>
+            <Text>es el home ayudaaaaaaaaaaa</Text>
         </View>
     );
 };
 
-const styles = StyleSheet.create({});
 export default Home;
