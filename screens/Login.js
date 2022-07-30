@@ -1,11 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet, KeyboardAvoidingView} from "react-native";
 import {Button, Input,Image } from "@rneui/themed";
 import { StatusBar } from "expo-status-bar";
+import { auth } from "../firebase";
 
 const Login = ({navigation}) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    // firebase
+    useEffect(()=>{
+        const unsubscribe = auth.onAuthStateChanged((authUser) =>{
+            console.log(authUser);
+            if(authUser){
+                navigation.replace("Home")
+            }
+        });
+
+        return unsubscribe;
+    }, [])
 
     const signIn=()=>{
 
